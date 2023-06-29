@@ -21,12 +21,20 @@ const LoginPage = () => {
 
     return(
         <>
-            <h1>Log In</h1>
-            { error && <p>{error}</p>}
-            <input placeholder="Your email address" value={email} onChange={ e => setEmail(e.target.value)} />
-            <input type="password" placeholder="Your password" value={password} onChange={ e => setPassword(e.target.value)} />
+            <div className="loginForm">
+            <h1>Login</h1>
+            { error && <p className="error">{error}</p>}
+            <div>
+                <label>User Email</label><br/>
+                <input type="email" placeholder="Your email address" value={email} onChange={ e => setEmail(e.target.value)} />
+            </div>
+            <div>
+                <label>Password</label><br/>
+                <input type="password" placeholder="Your password" value={password} onChange={ e => setPassword(e.target.value)} />
+            </div>
             <button onClick={logIn}>Log In</button>
-            <Link to="/create-account">Don't have an account? Create one here</Link>
+            <Link className="link" to="/create-account">Don't have an account? Create one here</Link>
+            </div>
         </>
     )
     }
